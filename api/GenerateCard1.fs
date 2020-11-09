@@ -21,7 +21,7 @@ module HttpTrigger1 =
     let QueryDescription = "description"
 
     [<FunctionName("GetMyName")>]
-    let run ([<HttpTrigger(AuthorizationLevel.User, "get", "post", Route = null)>]request: HttpRequest) (log: ILogger) =
+    let run ([<HttpTrigger(AuthorizationLevel.Function, "get", "post", Route = null)>]request: HttpRequest) (log: ILogger) =
         async {
             log.LogInformation("Starting")
             let! responseMessage =
