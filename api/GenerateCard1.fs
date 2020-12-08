@@ -9,6 +9,7 @@ open Microsoft.Extensions.Logging
 open System.Text.Json
 open System.Text.Json.Serialization 
 open Newtonsoft.Json
+open Microsoft.Graph
 
 module HttpTrigger1 =
 
@@ -24,6 +25,7 @@ module HttpTrigger1 =
     let run ([<HttpTrigger(AuthorizationLevel.Function, "get", "post", Route = null)>]request: HttpRequest) (log: ILogger) =
         async {
             log.LogInformation("Starting")
+            log.LogInformation(request.HttpContext.User.Identity.Name)
             let! responseMessage =
                 match request.Method with
                 | "GET" ->
