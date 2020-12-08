@@ -6,10 +6,11 @@ open Microsoft.Azure.WebJobs
 open Microsoft.Azure.WebJobs.Extensions.Http
 open Microsoft.AspNetCore.Http
 open Microsoft.Extensions.Logging
+open System.Net
+open System.Security.Claims
 open System.Text.Json
 open System.Text.Json.Serialization 
 open Newtonsoft.Json
-open Microsoft.Graph
 
 module HttpTrigger1 =
 
